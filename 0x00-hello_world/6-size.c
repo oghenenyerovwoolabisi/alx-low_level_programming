@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main - A program that prints various sizes on my computer
+ * main - Entry point
  * Return: Always 0 (success)
  */
 int main(void)
