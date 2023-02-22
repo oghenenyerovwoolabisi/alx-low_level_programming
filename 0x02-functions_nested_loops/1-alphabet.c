@@ -3,7 +3,7 @@
 /**
  * print_alphabet - Entry point
  * Description - prints all alphabet, in lowercase, followed by a new line
- * Return: 0
+ * Return
  */
 
 void print_alphabet(void)
@@ -18,5 +18,4 @@ void print_alphabet(void)
 		ch++;
 	}
 	_putchar('\n');
-	return (0);
 }
