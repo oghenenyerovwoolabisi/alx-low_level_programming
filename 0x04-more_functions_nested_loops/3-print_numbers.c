@@ -13,6 +13,17 @@ int _putchar(char c)
 	return (write(1, &c, 1));
 }
 /**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
+
+int main(void)
+{
+        print_numbers();
+        return (0);
+}
+/**
  * print_numbers - print 0-9
  * return: void
  */
