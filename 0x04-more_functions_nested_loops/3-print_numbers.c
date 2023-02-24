@@ -20,8 +20,8 @@ int _putchar(char c)
 
 int main(void)
 {
-        print_numbers();
-        return (0);
+	print_numbers();
+	return (0);
 }
 /**
  * print_numbers - print 0-9
@@ -30,11 +30,11 @@ int main(void)
 
 void print_numbers(void)
 {
-	char c;
+	int ch;
 
-	for (c = '0'; c <= '9'; c++)
+	for (ch = 48; ch < 58; ch++)
 	{
-		_putchar(c);
+		_putchar(ch);
 	}
 	_putchar('\n');
 }
