@@ -24,14 +24,20 @@ char *str_concat(char *s1, char *s2)
 		conct = malloc(sizeof(char) * (i + j + 1));
 	if (conct == NULL)
 		return (NULL);
-	for (i = 0; s1[i] != '\0'; i++)
+	i = j = 0;
+
+	while (s1[i] != '\0')
 	{
 		conct[i] = s1[i];
+		i++;
 	}
-	for (j = 0; s2[j] != '\0'; i++; j++)
+	while (s2[j] != '\0')
 	{
 		conct[i] = s2[j];
+		i++, j++;
 	}
+
+
 	conct[i] = '\0';
 	return (conct);
 }

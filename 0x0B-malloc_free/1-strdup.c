@@ -15,15 +15,23 @@ char *_strdup(char *str)
 	if (str == NULL)
 		return (NULL);
 
-	for (i = 0; str[i] != 0; i++)
-		
-		
+	r = 0;
+	i = 0;
+
+	while (str[i] != '\0')
+	{
+		r++;
+		i++;
+	}
 	ppp = malloc(sizeof(char) * (i + 1));
 
 	if (ppp == NULL)
 		return (NULL);
 
-	for (r = 0; str[r]; r++)
-		ppp[r] = str[r];
+	for (i = 0; i < r; i++)
+	{
+		ppp[i] = str[i];
+	}
 	return (ppp);
+	free(ppp);
 }
