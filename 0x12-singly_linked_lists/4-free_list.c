@@ -4,19 +4,19 @@
 #include "lists.h"
 
 /**
- * free_list - frees a list.
- *@head: a list that enters to the function.
+ * free_list - function that frees a list.
+ *@head: a list that goes into the function.
  */
 void free_list(list_t *head)
 {
-	list_t *temp;
+	list_t *inte;
 
-	temp = head;
-	while (temp != NULL)
+	inte = head;
+	while (inte != NULL)
 	{
-		free(temp->str);
-		free(temp);
-		temp = temp->next;
+		free(inte->str);
+		free(inte);
+		inte = inte->next;
 	}
 }
 
