@@ -3,7 +3,7 @@
 #include "lists.h"
 
 /**
- * add_node - add new node begining of list_t
+ * add_node - adds new node to begining of list_t
  *@head: pointer to structure
  *@str: string
  * Return: the adrres of new element
@@ -11,25 +11,23 @@
 
 list_t *add_node(list_t **head, const char *str)
 {
-	list_t *newNode;
-	unsigned int length = 0;
+	list_t *nNode;
+	unsigned int leng;
 
-	newNode = malloc(sizeof(list_t));
-	if (newNode == NULL)
+	nNode = malloc(sizeof(list_t));
+	if (nNode == NULL)
 	{
-		free(newNode);
+		free(nNode);
 		return (NULL);
 	}
-	newNode->str = strdup(str);
-	while (str[length] != '\0')
-	{
-		length++;
-	}
-	newNode->len = length;
+	nNode->str = strdup(str);
+	for (leng = 0; str[leng] != '\0'; leng++)
+
+	nNode->len = leng;
 	if (*head != NULL)
-		newNode->next = *head;
+		nNode->next = *head;
 	if (*head == NULL)
-		newNode->next = NULL;
-	*head = newNode;
+		nNode->next = NULL;
+	*head = nNode;
 	return (*head);
 }
