@@ -304,6 +304,3 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	close_elf(op);
 	return (0);
 }
-
-
-
