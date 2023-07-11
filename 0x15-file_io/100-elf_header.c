@@ -3,8 +3,8 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 void check_elf(unsigned char *e_ident);
 void print_magic(unsigned char *e_ident);
@@ -25,9 +25,9 @@ void close_elf(int elf);
  */
 void check_elf(unsigned char *e_ident)
 {
-	int ind = 0;
+	int ind;
 
-	while (ind < 4)
+	for (ind = 0; ind < 4; ind++)
 	{
 		if (e_ident[ind] != 127 &&
 				e_ident[ind] != 'E' &&
@@ -37,7 +37,6 @@ void check_elf(unsigned char *e_ident)
 			dprintf(STDERR_FILENO, "Error: Not an ELF file\n");
 			exit(98);
 		}
-		ind++;
 	}
 }
 
@@ -70,7 +69,7 @@ void print_magic(unsigned char *e_ident)
  */
 void print_class(unsigned char *e_ident)
 {
-	printf(" Class: ");
+	printf(" Class:                   ");
 
 	switch (e_ident[EI_CLASS])
 	{
@@ -93,7 +92,7 @@ void print_class(unsigned char *e_ident)
  */
 void print_data(unsigned char *e_ident)
 {
-	printf(" Data: ");
+	printf(" Data:                ");
 
 	switch (e_ident[EI_DATA])
 	{
@@ -117,7 +116,7 @@ void print_data(unsigned char *e_ident)
  */
 void print_version(unsigned char *e_ident)
 {
-	printf(" Version: %d",  e_ident[EI_VERSION]);
+	printf(" Version:             %d",  e_ident[EI_VERSION]);
 
 	switch (e_ident[EI_VERSION])
 	{
@@ -192,7 +191,7 @@ void print_type(unsigned int e_type, unsigned char *e_ident)
 {
 	if (e_ident[EI_DATA] == ELFDATA2MSB)
 		e_type >>= 8;
-	printf(" Type: ");
+	printf(" Type:              ");
 
 	switch (e_type)
 	{
@@ -223,7 +222,7 @@ void print_type(unsigned int e_type, unsigned char *e_ident)
  */
 void print_entry(unsigned long int e_entry, unsigned char *e_ident)
 {
-	printf(" Entry point address: ");
+	printf(" Entry point address:          ");
 
 	if (e_ident[EI_DATA] == ELFDATA2MSB)
 	{
